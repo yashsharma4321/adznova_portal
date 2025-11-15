@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Navbar from "./components/navbar";
+
+// Public Pages
+import Home from "./components/home/home";
+import About from "./components/about/about";
+import Contact from "./components/contact/contact";
+import Jobs from "./components/jobs/jobs";
+import Apply from "./components/jobs/apply";
+
+// Auth Pages
+import Login from "./components/jobs/Login";
+import Register from "./components/jobs/Register";
+
+// Dashboard Pages
+import Dashboard from "./components/jobs/Dashboard";
+import PostJob from "./components/jobs/PostJob";
+
+// src/components/jobs/Applicants.jsx
+import Applicants from "./components/jobs/Applicants";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/apply" element={<Apply />} />
+
+        {/* Auth Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Dashboard Routes */}
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/post-job" element={<PostJob />} />
+        <Route path="/dashboard/applicants" element={<Applicants />} />
+      </Routes>
+    </Router>
   );
 }
 

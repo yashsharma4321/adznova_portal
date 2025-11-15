@@ -1,0 +1,51 @@
+.auth-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+}
+
+.auth-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-form input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.auth-btn {
+  background: #ff6b00;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.auth-btn:hover {
+  background: #e25c00;
+}
+
+.applicants-container {
+  padding: 20px;
+}
+
+.applicant-card {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+}

@@ -1,69 +1,103 @@
-/* MAIN NAVBAR */
+/* -------------------- MAIN NAVBAR -------------------- */
 .navbar {
   width: 100%;
-  padding: 15px 50px; 
+  padding: 15px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 25px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 200;
+  transition: 0.3s ease;
 }
 
-/* LOGO */
+/* Logo */
 .logo {
-  font-size: 26px;
-  font-weight: 700;
-  color: #333;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ff6b00;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-/* NAV LINKS DESKTOP */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* -------------------- DESKTOP NAV LINKS -------------------- */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #333;
   font-size: 17px;
-  font-weight: 500;
-  transition: 0.2s ease;
+  font-weight: 600;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* Underline Animation */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #ff6b00;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
 .nav-links li a:hover {
   color: #ff6b00;
 }
 
-/* POST JOB BUTTON */
+/* -------------------- BUTTON DESKTOP -------------------- */
 .post-job-btn {
-  padding: 10px 22px;
+  padding: 10px 24px;
   background: #ff6b00;
-  color: white;
-  border-radius: 8px;
+  color: white !important;
+  border-radius: 10px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
 .post-job-btn:hover {
   background: #e25f00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
 }
 
-/* HAMBURGER */
+/* -------------------- HAMBURGER -------------------- */
 .menu-icon {
   display: none;
-  font-size: 30px;
+  font-size: 34px;
   cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
 }
 
+.menu-icon:hover {
+  transform: scale(1.1);
+}
 
-/* -------------------- RESPONSIVE -------------------- */
-
+/* -------------------- MOBILE NAV -------------------- */
 @media (max-width: 900px) {
   .menu-icon {
     display: block;
@@ -75,23 +109,32 @@
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 75px;
     left: -100%;
-    flex-direction: column;
     width: 100%;
+    flex-direction: column;
     background: white;
-    padding: 20px 0;
+    padding: 30px 0;
     gap: 25px;
     text-align: center;
-    transition: 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 0 0 15px 15px;
   }
 
   .nav-links.active {
     left: 0;
   }
 
+  .nav-links li a {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
   .mobile-btn {
     display: block;
   }
+}
+ul.nav-links {
+    padding-top: 1%;
 }

@@ -35,7 +35,7 @@ function Navbar() {
 
       {/* POST JOB BUTTON (Desktop view) */}
       <Link to="/login" className="post-job-btn desktop-btn">
-        Post Job
+        Employeer/Company
       </Link>
     </nav>
   );

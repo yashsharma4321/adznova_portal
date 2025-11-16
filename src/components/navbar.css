@@ -138,3 +138,8 @@
 ul.nav-links {
     padding-top: 1%;
 }
+
+nav.navbar {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+}
